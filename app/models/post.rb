@@ -2,6 +2,10 @@ class Post < ActiveRecord::Base
 
   belongs_to :author
   validate :is_title_case 
+  # # Runs before validation
+  before_validation :make_title_case
+  # Runs after validation
+  # before_save :make_title_case
 
   private
 
